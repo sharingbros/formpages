@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Hotel Booking</title>
+
+</style>
+<script type="text/javascript">
+
+
+function chkEmpty(){
+    var name=/[A-Za-z]{5,17}$/;
+	var lastname=/[A-Za-z]{5,17}$/;
+	var mob = /^[7-9]{1}[0-9]{9}$/;
+	var email=/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
+	var cardnumber=/[0-9]{10}$/;
+
+	if (document.frmReg.txtFirstName.value == "") {alert("Please fill the First Name");}
+	else if (name.test(document.frmReg.txtFirstName.value) == false) { alert("Please enter valid First name.");}
+	
+	else if (document.frmReg.txtLastName.value == "") {alert("Please fill the Last Name");}
+	else if (lastname.test(document.frmReg.txtLastName.value) == false) { alert("Please enter valid Last name.");}
+	else if (document.frmReg.txtEmail.value == ""){alert("Please fill the Email");}
+	else if (email.test(document.frmReg.txtEmail.value) == false) { alert("Please enter valid Email Id.");}
+	else if (document.frmReg.txtPhone.value == "") {alert("Please fill the Mobile No.");}
+	else if (mob.test(document.frmReg.txtPhone.value) == false) { alert("Please enter valid Contact no.");}
+	else if (document.frmReg.txtDebit.value == ""){alert("Please fill the Debit card Number");}
+	else if (cardnumber.test(document.frmReg.txtDebit.value) == false) { alert("Please enter valid CardNumber.");}
+		else {
+	//alert("Hotel Booking completed Successfully.");
+	window.location="success.html";
+		}
+	}
+
+
+
+</script>
+
+</head>
+<body>
+<div style="width: 700px;margin-left: 200px;">
+<h2 style="color:red; font-style: italic;">Hotel Booking Form</h2>
+<hr>
+<div style=" border-radius: 15px;      padding: 20px;    width: 400px;     box-shadow:5px 5px 5px 5px red;">
+<form name="frmReg">
+
+	   <table  align="center" style="font-family:Calibri;" >
+            <tr>
+            	<th style="color:red;" align="left">Personal Details</th>
+            </tr>
+          <tr>
+                <td align="left">First Name* : </td>
+                <td><input type="text" class="Format1" id ="txtFirstName" name="txtFN" pattern="[A-Za-z]{5,17}" /></td>
+            </tr>
+			<tr>
+                <td align="left">Last Name* :</td>
+                <td align="left"><input type="text" id ="txtLastName" name="txtLN" pattern="[A-Za-z]{5,17}" /></td>
+            </tr>
+			 			<tr>
+                <td align="left">Email* :</td>
+                <td><input type="text" id ="txtEmail" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/></td>
+            </tr>
+            	
+			<tr>
+                <td align="left">Mobile no.*:</td>
+                <td><input type="text" name="Phone" id ="txtPhone"   pattern="[789][0-9]{9}"/></td>
+            </tr>
+			
+			<tr>
+                <td align="left">Address:</td>
+                <td>
+                	<textarea rows="5" cols="20"></textarea>
+                </td>
+			</tr>
+			
+			 			<tr>
+                <td align="right">Debit Card Number* :</td>
+                <td><input type="text" id ="txtDebit" name="debit" pattern="[0-9]{10}"  /></td>
+            </tr>
+           
+			
+			          
+			<tr>
+                <td colspan=2 align="right"> <br> 
+				<input type="button" id ="btnPayment" class="btn" value = "Confirm Booking" onclick=chkEmpty()>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </tr>
+           </table>
+
+       </form>
+</div>
+
+</div>
+</body>
+</html>
