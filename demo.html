@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Hotel Booking</title>
+
+</style>
+<script type="text/javascript">
+
+
+function chkEmpty(){
+    var name=/[A-Za-z]{5,17}$/;
+	
+	if (document.frmReg.txtFirstName.value == "") {alert("Please fill the First Name");
+	else if (name.test(document.frmReg.txtFirstName.value) == false) { alert("Please enter valid First name.");}
+	
+		else {
+	//alert("Hotel Booking completed Successfully.");
+	window.location="success.html";
+		}
+	}
+
+
+
+</script>
+
+</head>
+<body>
+<div style="width: 700px;margin-left: 200px;">
+<h2 style="color:red; font-style: italic;">Hotel Booking Form</h2>
+<hr>
+<div style=" border-radius: 15px;      padding: 20px;    width: 400px;     box-shadow:5px 5px 5px 5px red;">
+<form name="frmReg">
+
+	   <table  align="center" style="font-family:Calibri;" >
+            <tr>
+            	<th style="color:red;" align="left">Personal Details</th>
+            </tr>
+          <tr>
+                <td align="left">First Name* : </td>
+                <td><input type="text" class="Format1" id ="txtFirstName" name="txtFN" pattern="[A-Za-z]{5,17}$" /></td>
+            </tr>
+			
+			          
+			<tr>
+                <td colspan=2 align="right"> <br> 
+				<input type="button" id ="btnPayment" class="btn" value = "Confirm Booking" onclick=chkEmpty()>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </tr>
+           </table>
+
+       </form>
+</div>
+
+</div>
+</body>
+</html>
